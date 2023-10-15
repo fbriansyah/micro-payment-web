@@ -18,6 +18,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { useNavigate } from 'react-router-dom';
 
 const formSchema = z.object({
   username: z.string().min(5).max(50),
@@ -25,6 +26,7 @@ const formSchema = z.object({
 });
 
 export default function LoginPage() {
+  const navigate = useNavigate();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -35,6 +37,7 @@ export default function LoginPage() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values)
+    navigate(`/app`)
   }
 
   return (
