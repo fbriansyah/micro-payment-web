@@ -1,8 +1,13 @@
+import Header from "@/components/shared/header";
 
 
 export default function DashboardPage() {
 
   return (
-    <h1 className="text-4xl font-semibold text-primary">Dashboard Page</h1>
+    <div className="h-full grid place-items-center pt-10 ">
+      <div className="max-w-5xl w-full">
+        <Header />
+      </div>
+    </div>
   );
 }
