@@ -1,4 +1,5 @@
 import DashboardPage from './pages/dashboard/dashboard-page';
+import ErrorPage from './pages/error-page';
 import LoginPage from './pages/login/login-page'
 import {
   createBrowserRouter,
@@ -8,6 +9,7 @@ import {
 const router = createBrowserRouter([
   {
     path: '/',
+    errorElement: <ErrorPage />,
     element: <LoginPage />,
   },
   {
